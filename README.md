@@ -5,20 +5,20 @@
 如果要给 `N` 个样本做聚类，那么必先准备半正定且对称的距离函数 `D`，表示 `N` 个样本的两两距离。另外，我们另准备一个长为 `N`，每个位置初始化为 1 的数组 `L`.
 
 ```
-定义 UPGMA(`\delta`, `L`)：	
+UPGMA(D, L)：	
    
-   若 $\delta$ 大小为 1：
+   若 D 大小为 1：
       停止运行
    
-   记 `D` 值域中最小的非零元素为 `D (x, y)`
+   记 D 值域中最小的非零元素为 D (x, y)
    
-   定义新距离函数 D:  对 D 中的任意两个样本 `a, b`:
-      若 a, b 不是 x 或 y: D'(a,b)=D(a,b)
-      若 a 是 x 或 y: D'({x,y}, d)=(L(x)D(x,b)+L(y)D(y,b))/(L(x) + L(y))
+   定义新距离函数 D:  对 D 中的任意两个样本 a, b:
+      若 a, b 不是 x 或 y: D'(a,b) = D(a,b)
+      若 a 是 x 或 y: D'({x,y}, d) = (L(x)D(x,b) + L(y)D(y,b)) / (L(x) + L(y))
 
-   定义新数组 L'，令 L'({x,y})=L(x) + L(y)
+   定义新数组 L'，令 L'({x,y}) = L(x) + L(y)
 
-   对 $\delta$ 中的任意非 x 或 y 的样本 a:  L'(a)=L(a)
+   对 $\delta$ 中的任意非 x 或 y 的样本 a:  L'(a) = L(a)
 
    报告：“结合节点 x, y 为 {x,y}：分岔高度为 D(x, y)/2”
 
@@ -108,5 +108,5 @@ edgelabels(text= round(tree$edge.length,4))
 
 做出来结果应该是这样的
 
-<img src="https://github.com/LykosEremos/phylo_with_ti83/blob/main/5.png" width="250" />
+<img src="https://github.com/LykosEremos/phylo_with_ti83/blob/main/5.png" width="500" />
 
