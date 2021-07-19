@@ -13,7 +13,7 @@ UPGMA(D, L)：
    记 D 值域中最小的非零元素为 D (x, y)
    
    定义新距离函数 D':  对 D 定义域中的任意两个样本 a, b:
-      若 a, b 不是 x 或 y: D'(a,b) = D(a,b)；D'
+      若 a, b 不是 x 或 y: D'(a,b) = D(a,b);
       若 a 是 x 或 y: D'({x,y}, d) = (L(x)D(x,b) + L(y)D(y,b)) / (L(x) + L(y))
 
    定义新数组 L'，令 L'({x,y}) = L(x) + L(y)
